@@ -1,0 +1,6 @@
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Jetbrains products
+.idea

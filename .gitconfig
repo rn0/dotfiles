@@ -1,5 +1,8 @@
 [core]
     excludesfile = ~/.gitignore
+[user]          
+    email = example@example.org
+    name = rn
 [alias]
     s = status -s
     

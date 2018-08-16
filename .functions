@@ -55,3 +55,16 @@ function extract() {
 		echo "'$1' is not a valid file"
 	fi
 }
+
+function dphp() {
+	docker-compose exec --user www-data web php $@
+}
+
+function dxphp() {
+	CONTAINER_ID=`docker-compose ps -q web`
+
+	REMOTE_HOST=`docker inspect --format '{{range .NetworkSettings.Networks}}{{.Gateway}}{{end}}' "$CONTAINER_ID"`
+
+	docker-compose exec --user www-data web php -dzend_extension=xdebug -dxdebug.remote_host="$REMOTE_HOST" -dxdebug.idekey="PHPSTORM" $@
+}
+

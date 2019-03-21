@@ -56,6 +56,12 @@ function extract() {
 	fi
 }
 
+function dip() {
+    docker ps --format "{{.ID}}" | while read -r line ; do
+        echo $line $(docker inspect --format '{{ .Name }} - {{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' $line) : $(docker port "$line" | grep -o "0.0.0.0:.*" | cut -f2 -d:)
+    done
+}
+
 function dphp() {
 	docker-compose exec --user www-data web php $@
 }

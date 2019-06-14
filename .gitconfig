@@ -5,7 +5,11 @@
     name = rn
 [alias]
     s = status -s
-    
+
+    hidden = !git ls-files -v|grep '^h'
+    hide = update-index --assume-unchanged
+    unhide = update-index --no-assume-unchanged
+
     # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
     snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
     snapshots = !git stash list --grep snapshot

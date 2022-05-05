@@ -1,0 +1,21 @@
+#!/bin/sh
+
+{{ if eq .osid "linux-debian" }}
+# Debian-specific code
+{{ else if eq .osid "linux-manjaro" }}
+
+sudo pacman -S \
+	fish \
+	micro \
+	lsd \
+	atuin \
+	starship \
+	ttf-jetbrains-mono \
+	fzf \
+	snapd
+
+sudo systemctl enable --now snapd.socket
+sudo ln -sf /var/lib/snapd/snap /snap
+sudo snap install code --classic
+
+{{ end }}

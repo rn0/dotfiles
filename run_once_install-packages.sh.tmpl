@@ -8,14 +8,22 @@ sudo pacman -S \
 	fish \
 	micro \
 	lsd \
+	fzf \
+	fd \
+	bat \
 	atuin \
 	starship \
 	ttf-jetbrains-mono \
-	fzf \
 	snapd
 
 sudo systemctl enable --now snapd.socket
 sudo ln -sf /var/lib/snapd/snap /snap
 sudo snap install code --classic
+
+fish <<'END_FISH'
+	curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source 
+	fisher install jorgebucaran/fisher
+	fisher install PatrickF1/fzf.fish
+END_FISH
 
 {{ end }}

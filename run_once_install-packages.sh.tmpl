@@ -16,9 +16,14 @@ sudo pacman -S \
 	lfs \
 	procs \
 	atuin \
+	tealdeer \
+	curlie \
+	xh \
 	starship \
 	ttf-jetbrains-mono \
 	snapd
+
+yay -S aur/zenith-bin
 
 sudo systemctl enable --now snapd.socket
 sudo ln -sf /var/lib/snapd/snap /snap

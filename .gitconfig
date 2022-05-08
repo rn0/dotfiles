@@ -4,8 +4,6 @@
     email = rn0@users.noreply.github.com
     name = rn
 [alias]
-    s = status -s
-
     hidden = !git ls-files -v|grep '^h'
     hide = update-index --assume-unchanged
     unhide = update-index --no-assume-unchanged
@@ -16,11 +14,3 @@
 
     # via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
     recent-branches = !git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
-
-    # log
-    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    slog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
-    changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-    short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
-    changelog = log --pretty=format:\" * %s\"
-    shortnocolor = log --pretty=format:\"%h %cr %cn %s\"

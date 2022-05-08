@@ -11,5 +11,5 @@ if status is-interactive
     starship init fish | source
     atuin init fish | source
     yq shell-completion fish | source
-    fish_ssh_agent
+    ssh_agent
 end

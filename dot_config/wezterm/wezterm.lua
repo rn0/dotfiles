@@ -82,7 +82,10 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
   end
 
   local index = tab.tab_index+1
-  local title = ""..index.."."..tab.active_pane.title..""
+  local icons = { "①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩", 
+                  "⑪", "⑫", "⑬", "⑭", "⑮", "⑯", "⑰", "⑱", "⑲", "⑳", }
+
+  local title = ""..icons[index].." "..tab.active_pane.title..""
 
   return {
     {Attribute={Italic=false}},

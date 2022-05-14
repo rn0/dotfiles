@@ -3,6 +3,8 @@
 # Download utility https://github.com/ouch-org/ouch to extract archives 
 curl -s https://raw.githubusercontent.com/ouch-org/ouch/master/install.sh | sh
 
+{{ template "github_download.sh" }}
+
 {{ if eq .osid "linux-debian" }}
 # Debian-specific code
 {{ else if eq .osid "linux-manjaro" }}
@@ -47,3 +49,5 @@ sudo snap install code --classic
 #	fisher install jorgebucaran/fisher
 #	fisher install PatrickF1/fzf.fish
 #END_FISH
+
+github_download "TomWright/dasel"

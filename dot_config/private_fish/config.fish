@@ -1,6 +1,12 @@
 alias ls="lsd"
 alias cat="bat --paging=never"
 
+# show containers
+abbr --add dps "docker ps -a --format {{"'table {{.Names}}\t{{.Image}}\t{{.Status}}'"}}"
+abbr --add dpss "docker ps -q | xargs docker inspect --format {{"'{{.Config.Hostname}} - {{.Name}} - {{.NetworkSettings.IPAddress}}'"}}"
+# monitor all containers
+abbr --add ds 'docker stats (docker ps -q)'
+
 set -Ux EDITOR micro
 
 fish_add_path $HOME/.fnm

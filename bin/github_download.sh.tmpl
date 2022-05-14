@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# REQUIREMENTS:
+#   * jq
+#   * curl
+#   * ouch
+#   * sk
+#   * fd
+#   * awk
+
+set -eux
+set -o pipefail
+
+{{ template "github_download.sh" }}
+
+github_download

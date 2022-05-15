@@ -14,7 +14,7 @@ function github_download() {
 
     RELEASE_INFO="$( \
         echo "$LATEST_JSON" | \
-            jq -r ' .assets[] | select(.name | test(".*amd64.*"; "i")) | select(.name | test(".*Linux.*"; "i")) | select(.name | test(".*(zip|gz)$"; "i"))' | \
+            jq -r ' .assets[] | select(.name | test(".*(amd64|x64).*"; "i")) | select(.name | test(".*Linux.*"; "i")) | select(.name | test(".*(zip|gz)$"; "i"))' | \
             jq -r --argjson keys '["size", "download_count", "updated_at", "browser_download_url"]' 'with_entries( select( .key as $k | $keys | index($k) ) )'
     )"
     DOWNLOAD_URL=$(echo "$RELEASE_INFO" | jq -r '.browser_download_url')

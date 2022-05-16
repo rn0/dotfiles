@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/bin/bash
+
+set -eu
+set -o pipefail
 
 # Download utility https://github.com/ouch-org/ouch to extract archives 
 curl -s https://raw.githubusercontent.com/ouch-org/ouch/master/install.sh | sh

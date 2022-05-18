@@ -11,6 +11,7 @@ set -Ux EDITOR micro
 
 fish_add_path $HOME/.fnm
 fish_add_path $HOME/bin
+fish_add_path /usr/local/go/bin
 
 if status is-interactive
     # Commands to run in interactive sessions can go here

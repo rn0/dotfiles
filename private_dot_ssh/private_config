@@ -1,2 +1,5 @@
 Host *
   IdentitiesOnly yes
+
+Host *.fsi.pl
+  ForwardAgent yes

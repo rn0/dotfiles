@@ -21,4 +21,5 @@ if status is-interactive
     atuin init fish | source
     yq shell-completion fish | source
     ssh_agent
+    fnm env --use-on-cd | source
 end
